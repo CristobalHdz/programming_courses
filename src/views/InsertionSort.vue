@@ -9,7 +9,7 @@
         <v-text-field v-model="Four" outlined></v-text-field>
         <v-text-field v-model="Five" outlined></v-text-field>
         <v-text-field v-model="Six" outlined></v-text-field>
-        <v-btn @click="handleInsertionSort">Sort</v-btn>
+        <v-btn @click="handleSort">Sort</v-btn>
         <v-btn class="my-3" :to="{ name: 'main_view' }">Go Back</v-btn>
         <div class="text-h4">{{ numSort }}</div>
       </div>
@@ -30,7 +30,7 @@ export default {
     numSort: null,
   }),
   methods: {
-    handleInsertionSort() {
+    handleSort() {
       let array = [
         parseInt(this.One),
         parseInt(this.Two),
