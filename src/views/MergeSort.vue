@@ -40,42 +40,49 @@ export default {
         parseInt(this.Six),
       ];
 
-      // leftArr and rightArr are sorted
-      const merge = (leftArr, rightArr) => {
+      const mergeSort = (array) => {
+        // Check if array can be split
+        if (array.length < 2) {
+          return array;
+        }
+        // Get middle index
+        const middleIndex = Math.floor(array.length / 2);
+        // Split array into two sides
+        const leftSide = array.slice(0, middleIndex);
+        const rightSide = array.slice(middleIndex);
+
+        // Use recursion to continue splitting
+        return merge(mergeSort(leftSide), mergeSort(rightSide));
+      };
+
+      // leftSide and rightSide are sorted
+      const merge = (left, right) => {
+        // Create New Array
         const output = [];
-        let leftIndex = 0;
-        let rightIndex = 0;
 
-        while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
-          const leftEl = leftArr[leftIndex];
-          const rightEl = rightArr[rightIndex];
-
-          if (leftEl < rightEl) {
-            output.push(leftEl);
-            leftIndex++;
+        // Check if either array is empty
+        while (left.length && right.length) {
+          // Find lower value between 2 arrays
+          if (left[0] <= right[0]) {
+            // Add left value
+            output.push(left.shift());
           } else {
-            output.push(rightEl);
-            rightIndex++;
+            // Add right value
+            output.push(right.shift());
           }
         }
-        return [
-          ...output,
-          ...leftArr.slice(leftIndex),
-          ...rightArr.slice(rightIndex),
-        ];
+
+        // Merge left array
+        while (left.length) output.push(left.shift());
+
+        // Merge right array
+        while (right.length) output.push(right.shift());
+
+        // Return result array
+        return output;
       };
 
       // Recursive. This is a helper which divides arrays into smaller ones
-      const mergeSort = (array) => {
-        if (array.length <= 1) {
-          return array;
-        }
-        const middleIndex = Math.floor(array.length / 2);
-        const leftArr = array.slice(0, middleIndex);
-        const rightArr = array.slice(middleIndex);
-
-        return merge(mergeSort(leftArr), mergeSort(rightArr));
-      };
 
       this.numSort = mergeSort(array);
     },
