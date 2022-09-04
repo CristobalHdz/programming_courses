@@ -17,7 +17,11 @@
 export default {
   name: "main_view",
   data: () => ({
-    SortingRoutes: [{ name: "Insertion Sort" }, { name: "Merge Sort" }],
+    SortingRoutes: [
+      { name: "Insertion Sort" },
+      { name: "Merge Sort" },
+      { name: "Quick Sort" },
+    ],
   }),
   methods: {
     handleRoute(name) {

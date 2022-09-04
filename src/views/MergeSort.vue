@@ -40,6 +40,7 @@ export default {
         parseInt(this.Six),
       ];
 
+      // Recursive. This is a helper which divides arrays into smaller ones
       const mergeSort = (array) => {
         // Check if array can be split
         if (array.length < 2) {
@@ -52,6 +53,7 @@ export default {
         const rightSide = array.slice(middleIndex);
 
         // Use recursion to continue splitting
+        console.log("split:", leftSide, rightSide);
         return merge(mergeSort(leftSide), mergeSort(rightSide));
       };
 
@@ -72,17 +74,16 @@ export default {
           }
         }
 
-        // Merge left array
+        // Merge left array when right array is finished
         while (left.length) output.push(left.shift());
 
-        // Merge right array
+        // Merge right array when left array is finished
         while (right.length) output.push(right.shift());
 
         // Return result array
+        console.log("result:", output);
         return output;
       };
-
-      // Recursive. This is a helper which divides arrays into smaller ones
 
       this.numSort = mergeSort(array);
     },
