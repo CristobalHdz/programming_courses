@@ -77,4 +77,14 @@ export default {
   },
 };
 // How it works
+// [7, 8, 7 ,4 ,10, 3, 5]
+// Pivot: 5. It is supposed to be better when the pivot is at the middle, but in large arrays is complicated.
+// This time we got the right most number
+//  [4, 3] [5] [7, 8, 7, 10]
+//  4 pivot for left and 10 pivot for right
+//  [3] [4] [5] [7, 8, 7] [10]
+//  Pivot: 7
+// [3] [4] [5] [7] [7] [8] [10]
+// Put them together
+// [3, 4, 5, 7, 7, 8, 10]
 </script>

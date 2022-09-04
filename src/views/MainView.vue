@@ -2,7 +2,7 @@
   <v-app>
     <v-main>
       <div class="d-flex flex-column align-center">
-        <div class="text-h3">SALUTATIONS</div>
+        <div class="text-h3">Arrays</div>
         <div v-for="sortName in SortingRoutes" :key="sortName.name">
           <v-btn class="my-3" @click="handleRoute(sortName.name)">{{
             sortName.name
@@ -21,6 +21,7 @@ export default {
       { name: "Insertion Sort" },
       { name: "Merge Sort" },
       { name: "Quick Sort" },
+      { name: "Selection Sort" },
     ],
   }),
   methods: {
