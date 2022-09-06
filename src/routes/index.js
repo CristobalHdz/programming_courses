@@ -3,6 +3,7 @@ import MergeSort from "../views/MergeSort.vue";
 import MainView from "../views/MainView.vue";
 import QuickSort from "../views/QuickSort.vue";
 import SelectionSort from "../views/SelectionSort.vue";
+import BubbleSort from "../views/BubbleSort.vue";
 
 export default [
   { path: "/", name: "main_view", component: MainView },
@@ -10,4 +11,5 @@ export default [
   { path: "/merge_sort", name: "merge_sort", component: MergeSort },
   { path: "/quick_sort", name: "quick_sort", component: QuickSort },
   { path: "/selection_sort", name: "selection_sort", component: SelectionSort },
+  { path: "/bubble_sort", name: "bubble_sort", component: BubbleSort },
 ];

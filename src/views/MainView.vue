@@ -22,6 +22,7 @@ export default {
       { name: "Merge Sort" },
       { name: "Quick Sort" },
       { name: "Selection Sort" },
+      { name: "Bubble Sort" },
     ],
   }),
   methods: {
